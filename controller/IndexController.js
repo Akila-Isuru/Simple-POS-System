@@ -11,6 +11,6 @@ $(document).ready(() => {
 
     const target = $(this).data("target");
 
-    $(`#${target}`).fadeIn(500);
+    $(`#${target}`).fadeIn(100);
   });
 });
