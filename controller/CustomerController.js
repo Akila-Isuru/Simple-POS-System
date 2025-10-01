@@ -11,10 +11,22 @@ const cleanForm = () => {
 const loadTable = () => {
   $("#customer-table-body").empty();
   customer_array.forEach((customer, index) => {
-    const dataElement = `<tr><td>${customer.id}</td><td>${customer.name}</td><td>${customer.address}</td><td>${customer.salary}</td></tr>`;
+    const dataElement = `<tr>
+    <td>${customer.id}</td>
+    <td>${customer.name}</td>
+    <td>${customer.address}</td>
+    <td>${customer.salary}</td>
+    <td>
+    <button class="btn btn-warning btn-edit" data-index="${index}">Edit </button>
+    <button class="btn btn-danger btn-delete"data-index="${index}">Delete</button>
+    </td>
+    </tr>`;
     $("#customer-table-body").append(dataElement);
   });
 };
+$(".btn btn-warning btn-edit").on("click", (e) => {
+  console.log("btn clicked");
+});
 
 $("#btn-customer-save").on("click", (e) => {
   e.preventDefault();
@@ -23,6 +35,7 @@ $("#btn-customer-save").on("click", (e) => {
   const customer_name = $("#customer-name").val();
   const customer_address = $("#customer-address").val();
   const customer_salary = $("#customer-salary").val();
+
   // regex
   //   customer_array.length +1 - new id
   const cusromer = new Customer(
@@ -35,6 +48,8 @@ $("#btn-customer-save").on("click", (e) => {
   customer_array.push(cusromer);
 
   loadTable();
+  // $("#exampleModal").modal("hide");
+  // loadTable();
   cleanForm();
 });
 
