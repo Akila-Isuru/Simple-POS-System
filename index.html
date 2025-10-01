@@ -45,37 +45,53 @@
     </section>
 
     <!-- customer page -->
-    <section id="customer-page" class="page">
+     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Save Customer 
+</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Customer</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
         <div class="d-flex justify-content-between gap-5">
+            <input id="edit-indexx" type="hidden">
             <div class="w-100">
                 <form class="d-flex flex-column gap-2">
                     <input id="customer-id" type="text" placeholder="id" class="px-4 py-1" />
                     <input id="customer-name" type="text" placeholder="name" class="px-4 py-1" />
                     <input id="customer-address" type="text" placeholder="address" class="px-4 py-1" />
                     <input id="customer-salary" type="number" placeholder="salary" class="px-4 py-1" />
-                    <div>
-                        <button id="btn-customer-save" class="btn btn-primary w-100" type="button">Save</button>
-                        <button></button>
-                        <button></button>
-                        <button></button>
-                        <button></button>
-                    </div>
                 </form>
             </div>
-            <div class="w-100">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+       <button id="btn-customer-save" class="btn btn-secondary" type="button">Save</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <section id="customer-page" class="page">
+        </div>
+          <div class="w-100">
                 <table class="table table-bordered table-striped">
-                    <thead>
+                    <thead class="table-dark">
                         <tr>
                             <th>Id</th>
                             <th>Name</th>
                             <th>Address</th>
                             <th>Salary</th>
+                            <th style="width: 150px;">Action</th>
                         </tr>
                     </thead>
                     <tbody id="customer-table-body"></tbody>
                 </table>
             </div>
-        </div>
     </section>
 
     <!-- item page -->
