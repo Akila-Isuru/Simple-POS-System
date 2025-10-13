@@ -1,18 +1,18 @@
 $(document).ready(() => {
-  $("#customer-page").show()
+  $("#customer-page").show();
   //   $("#home-page").show()
 
   $(".nav-link, .navbar-brand").click(function (e) {
-    e.preventDefault()
+    e.preventDefault();
 
-    $(".nav-link").removeClass("active")
-    $(this).addClass("active")
+    $(".nav-link").removeClass("active");
+    $(this).addClass("active");
 
-    $(".page").hide()
+    $(".page").hide();
 
-    const target = $(this).data("target")
+    const target = $(this).data("target");
 
     // $("#" + target).show()
-    $(`#${target}`).fadeIn(1000)
-  })
-})
+    $(`#${target}`).fadeIn(1000);
+  });
+});
